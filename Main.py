@@ -1,5 +1,6 @@
-import Employee
+from Employee import Employee
+from datetime import date
 
-myEmployee : Employee
+myEmployee = Employee()
 
-myEmployee
+myEmployee.toString()

@@ -1,4 +1,3 @@
-from asyncio.windows_events import NULL
 from datetime import date
 
 class Employee:
@@ -6,7 +5,7 @@ class Employee:
     name : str
     id : int
     birthDay : date
-    sex : bool
+    sex : bool     #1 to female 0 to male
     salary : float
     hight : float
     maritalStatus : str
@@ -21,6 +20,18 @@ class Employee:
         self.salary = salary
         self.hight = hight
         self.maritalStatus = maritalStatus
+
+# Empty constructor section
+
+    def __init__(self):
+        self.name = "NoName"
+        self.id = 00000
+        self.birthDay = date.today()
+        self.sex = 0
+        self.salary = 0.0
+        self.hight = 0.0
+        self.maritalStatus = "NoStatus"
+        
 
 # Setters section
 
@@ -81,7 +92,10 @@ class Employee:
         print("_"*8)
         print("Birthday: ", self.birthDay)
         print("_"*8)
-        print("Sex: ", self.sex)
+        if(self.sex == 1):
+            print("Sex: Female")
+        else:
+            print("Sex: Male")
         print("_"*8)
         print("Salary: ", self.salary)
         print("_"*8)
