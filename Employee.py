@@ -80,7 +80,7 @@ class Employee:
         return self.maritalStatus
 
     def getEmployeeRegister(self):
-        employeeRegister = str(self.name) + ";" + str(self.id) + ";" + str(self.birthDay) + ";" + str(self.sex) + ";" + str(self.salary) + ";" + str(self.hight) + ";" + str(self.maritalStatus) + "|\n" 
+        employeeRegister = str(self.name) + ";" + str(self.id) + ";" + str(self.birthDay) + ";" + str(self.sex) + ";" + str(self.salary) + ";" + str(self.hight) + ";" + str(self.maritalStatus) + "\n" 
         return employeeRegister
 
 # Functions section
