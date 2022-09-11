@@ -100,7 +100,11 @@ while (True):
     print("5. Report about men over 50 years old and women 55 years old ")
     print("-----Reports Section-----")
     print("6. Exit")
-    selection = int(input("Selection: ") or 6)
+    try:
+        selection = int(input("Selection: ") or 6)
+    except ValueError:
+        print("Make a valid selection please")
+        continue
 
     if(selection == 1):
         print("How mutch employees you wanna add today?")
