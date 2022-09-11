@@ -7,16 +7,59 @@ from datetime import date
 def addEmployee():
     myEmployee = Employee()
     print("Type employee information\n")
-    myEmployee.setName(str(input("Name: ")))
-    myEmployee.setId(int(input("Id: ")))
-    yearOfBirth = int(input("Year of birth: "))    ##
-    mounthOfBirth = int(input("Mounth of birth: "))
-    dayOfBirth = int(input("Day of birth: "))
-    myEmployee.setBirthDay(yearOfBirth, mounthOfBirth, dayOfBirth)
-    myEmployee.setSex(int(input("Gender 1 for female 0 for male: ")))
-    myEmployee.setSalary(float(input("Salary: ")))
-    myEmployee.setHight(float(input("Hight: ")))
-    myEmployeeMaritalStatusIndicator = int(input("Marital status 1 for Single, 2 for Married, 3 for Separate, 4 for Widower: "))
+    myEmployee.setName(str(input("Name: "))) # name characteres amounth < 40
+    while(True):
+        try:
+            myEmployee.setId(int(input("Id: "))) # only numbers
+        except ValueError:
+            print("Sorry only numeric values are allowed")
+            continue
+        else:
+            break
+
+    while(True):
+        try:
+            yearOfBirth = int(input("Year of birth: "))    #year > 18 only numbers
+            mounthOfBirth = int(input("Mounth of birth: ")) # only numbers
+            dayOfBirth = int(input("Day of birth: ")) # only numbers
+            myEmployee.setBirthDay(yearOfBirth, mounthOfBirth, dayOfBirth)
+        except ValueError:
+            print("Sorry only numeric values are allowed")
+            continue
+        else:
+            break
+    while(True):
+        try:
+            myEmployee.setSex(int(input("Gender 1 for female 0 for male: "))) # only numbers
+        except ValueError:
+            print("Sorry only numeric values are allowed")
+            continue
+        else:
+            break
+    while(True):
+        try:
+            myEmployee.setSalary(float(input("Salary: "))) #only numbers
+        except ValueError:
+            print("Sorry only numeric values are allowed")
+            continue
+        else:
+            break
+    while(True):
+        try:
+            myEmployee.setHight(float(input("Hight: "))) #only numbers
+        except ValueError:
+            print("Sorry only numeric values are allowed")
+            continue
+        else:
+            break
+    while(True):  
+        try:
+            myEmployeeMaritalStatusIndicator = int(input("Marital status 1 for Single, 2 for Married, 3 for Separate, 4 for Widower: ")) #only numbers
+        except ValueError:
+            print("Sorry only numeric values are allowed")
+            continue
+        else:
+            break
     # Default marital status Single
     myEmployeeMaritalStatus = "Single"
     if(myEmployeeMaritalStatusIndicator == 2):
