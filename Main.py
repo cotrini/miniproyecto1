@@ -108,7 +108,14 @@ while (True):
 
     if(selection == 1):
         print("How mutch employees you wanna add today?")
-        employesAmount = int(input("Employees amount: "))
+        while(True):
+            try:
+                employesAmount = int(input("Employees amount: "))
+            except ValueError:
+                print("Type a valid Employees amount")
+                continue
+            else:
+                break
         for i in range(employesAmount):
             file = open('employeesDataBase.txt', 'a')  # a append agregar
             file.write(addEmployee())
