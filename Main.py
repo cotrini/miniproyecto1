@@ -7,7 +7,7 @@ from datetime import date
 def addEmployee():
     myEmployee = Employee()
     print("Type employee information\n")
-    myEmployee.setName(str(input("Name: "))) # name characteres amounth < 40
+    myEmployee.setName(str(input("Name: "))) 
     while(True):
         try:
             myEmployee.setId(int(input("Id: "))) # only numbers
