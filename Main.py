@@ -173,7 +173,7 @@ while (True):
         employeeListReport=list()
         today = date.today()
         for employee in information:
-            years = today.year - int((re.split("-",employee[2]))[0]) 
+            years = today.year - int((re.split("-",employee[2]))[0]) - ((today.month,today.day)<(int((re.split("-",employee[2]))[1]),int((re.split("-",employee[2]))[2]))) 
             if(employee[3]=="1"):
                 if(years>55):
                     employeeListReport.append(employee)
