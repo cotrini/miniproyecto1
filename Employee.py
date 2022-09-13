@@ -13,103 +13,103 @@ class Employee:
 # Constructor section
     def __init__(self, name, id, birthDay, sex, salary, hight, maritalStatus):
 
-        self.name = name
-        self.id = id
-        self.birthDay = birthDay
-        self.sex = sex
-        self.salary = salary
-        self.hight = hight
-        self.maritalStatus = maritalStatus
+        self.__name = name
+        self.__id = id
+        self.__birthDay = birthDay
+        self.__sex = sex
+        self.__salary = salary
+        self.__hight = hight
+        self.__maritalStatus = maritalStatus
 
 # Empty constructor section
 
     def __init__(self):
-        self.name = "NoName"
-        self.id = 00000
-        self.birthDay = date.today()
-        self.sex = 0
-        self.salary = 0.0
-        self.hight = 0.0
-        self.maritalStatus = "NoStatus"
+        self.__name = "NoName"
+        self.__id = 00000
+        self.__birthDay = date.today()
+        self.__sex = 0
+        self.__salary = 0.0
+        self.__hight = 0.0
+        self.__maritalStatus = "NoStatus"
         
 
 # Setters section
 
     def setName(self, name):
-        self.name = name
+        self.__name = name
 
     def setId(self, id):
-        self.id = id
+        self.__id = id
 
     def setBirthDay(self, year, month, day):
-        self.birthDay = date(year, month, day)
+        self.__birthDay = date(year, month, day)
 
     def setSex(self, sex):
-        self.sex = sex
+        self.__sex = sex
     
     def setSalary(self, salary):
-        self.salary = salary
+        self.__salary = salary
 
     def setHight(self, hight):
-        self.hight = hight
+        self.__hight = hight
 
     def setMaritalStatus(self, maritalStatus):
-        self.maritalStatus = maritalStatus
+        self.__maritalStatus = maritalStatus
 
 # Getters section
 
     def getName(self):
-        return self.name
+        return self.__name
 
     def getId(self):
-        return self.id
+        return self.__id
 
     def getBirthDay(self):
-        return self.birthDay
+        return self.__birthDay
 
     def getSex(self):
-        return self.sex
+        return self.__sex
 
     def getSalary(self):
-        return self.salary
+        return self.__salary
 
     def getHight(self):
-        return self.hight
+        return self.__hight
 
     def getMaritalStatus(self):
-        return self.maritalStatus
+        return self.__maritalStatus
 
     def getEmployeeRegister(self):
-        employeeRegister = str(self.name) + ";" + str(self.id) + ";" + str(self.birthDay) + ";" + str(self.sex) + ";" + str(self.salary) + ";" + str(self.hight) + ";" + str(self.maritalStatus) + "\n" 
+        employeeRegister = str(self.getName()) + ";" + str(self.getId()) + ";" + str(self.getBirthDay()) + ";" + str(self.getSex()) + ";" + str(self.getSalary()) + ";" + str(self.getHight()) + ";" + str(self.getMaritalStatus()) + "\n" 
         return employeeRegister
 
 # Functions section
 
-    def toString(self):
+    def toString(self):  # SHOW FUNCTION
 
         print("_"*8)
         print("Employee information: ")
         print("_"*8)
-        print("Name: ", self.name)
+        print("Name: ", self.getName())
         print("_"*8)
-        print("Id: ",self.id)
+        print("Id: ",self.getId())
         print("_"*8)
-        print("Birthday: ", self.birthDay)
+        print("Birthday: ", self.getBirthDay())
         print("_"*8)
         if(self.sex == 1):
             print("Sex: Female")
         else:
             print("Sex: Male")
         print("_"*8)
-        print("Salary: ", self.salary)
+        print("Salary: ", self.getSalary())
         print("_"*8)
-        print("Hight: ", self.hight)
+        print("Hight: ", self.getHight())
         print("_"*8)
-        print("Marital Status: ", self.maritalStatus)
+        print("Marital Status: ", self.getMaritalStatus())
         print("_"*8)
 
     def marriedVerifier(self):
-        if(self.maritalStatus == "Married"):
+        if(self.getMaritalStatus() == "Married"):
             return True
         else:
             return False
